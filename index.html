@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DP's Prep and Practice | SAT & ACT Tutoring</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2563eb',
+                        'secondary': '#0ea5e9',
+                        'accent': '#f59e0b',
+                        'dark': '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .calendly-inline-widget {
+            height: 600px;
+        }
+        @media (max-width: 768px) {
+            .calendly-inline-widget {
+                height: 550px;
+            }
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-slide {
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+        .testimonial-slide.active {
+            opacity: 1;
+        }
+        .tutor-overview {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+        }
+        .course-card {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="bg-emerald-500 w-8 h-8 rounded-full flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <a href="#" class="text-xl font-bold text-gray-800">DP's Prep & Practice</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-primary transition">Services</a>
+                    <a href="#schedule" class="text-gray-700 hover:text-primary transition">Schedule</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-primary transition">Testimonials</a>
+                    <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Contact</a>
+                </div>
+                
+                <button class="md:hidden text-2xl">
+                    <i class="fas fa-bars text-gray-600"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="tutor-overview py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Achieve Your College Test Goals</h1>
+                    <p class="text-xl text-slate-100 mb-8">Professional SAT/ACT tutoring with personalized strategies to maximize your score potential.</p>
+                    <div class="mb-8 bg-white bg-opacity-20 p-6 rounded-xl">
+                        <p class="text-white font-medium"><i class="fas fa-star text-yellow-300 mr-2"></i> Hourly rate: $50/hour</p>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#schedule" class="bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-blue-50 transition">Book Session</a>
+                        <a href="#contact" class="bg-primary bg-opacity-20 text-white px-6 py-3 rounded-lg hover:bg-opacity-30 transition">Contact Me</a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl shadow-xl p-8 transform rotate-6 w-11/12">
+                            <h3 class="font-bold text-gray-800 mb-4">Tutoring Subjects:</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center mr-3">
+                                        <i class="fas fa-check text-emerald-600"></i>
+                                    </div>
+                                    <span class="text-gray-700">SAT Test Prep</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center mr-3">
+                                        <i class="fas fa-check text-emerald-600"></i>
+                                    </div>
+                                    <span class="text-gray-700">ACT Test Prep</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center mr-3">
+                                        <i class="fas fa-check text-emerald-600"></i>
+                                    </div>
+                                    <span class="text-gray-700">Summer Math Coursework</span>
+                                </li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="schedule" class="py-16 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">Book a Session</h2>
+    <p class="text-gray-600 mb-8 max-w-xl mx-auto">
+      Choose a time that works best for you using the calendar below.
+    </p>
+
+    <div class="rounded-xl shadow-xl overflow-hidden w-full max-w-5xl mx-auto">
+      <iframe 
+        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0jdEZNh1oU8jpvQvvedcJ_SuZ-7c_zqKsnfq-wGRST_Y_cbah7jbzHPlvWj7o9oX9Om7Do6ldM?gv=true" 
+        style="border: 0;" 
+        width="100%" 
+        height="600" 
+        frameborder="0" 
+        scrolling="no" 
+        loading="lazy" 
+        title="Book an appointment with Daniel Prieto"
+        class="w-full h-[600px]">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Specialized Tutoring Programs</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Each program is tailored to student needs with measurable performance targets.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- SAT Prep Program -->
+                <div class="course-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 card-hover-effect hover:border-primary hover:-translate-y-2">
+                    <div class="h-2 bg-red-500"></div>
+                    <div class="p-8">
+                        <div class="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-line text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">SAT Prep</h3>
+                        <p class="text-gray-600 mb-6">Comprehensive training for all SAT sections with proven techniques to improve your score.</p>
+                        <ul class="mb-8 space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Math & Evidence-based Reading/Writing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Time management strategies</span>
+                            </li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-900">$50<span class="text-lg">/hr</span></span>
+                            <a href="#schedule" class="bg-red-500 bg-opacity-20 text-red-700 hover:bg-opacity-30 py-2 px-4 rounded-lg transition">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ACT Prep Program -->
+                <div class="course-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 card-hover-effect hover:border-primary hover:-translate-y-2">
+                    <div class="h-2 bg-purple-500"></div>
+                    <div class="p-8">
+                        <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-6">
+                            <i class="fas fa-book text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">ACT Prep</h3>
+                        <p class="text-gray-600 mb-6">Specialized curriculum targeting Science Reasoning and fast-paced Reading portions of the ACT.</p>
+                        <ul class="mb-8 space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>English, Math, Reading & Science</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Science data interpretation skills</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Realistic pacing drills</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Writing test strategies</span>
+                            </li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-900">$50<span class="text-lg">/hr</span></span>
+                            <a href="#schedule" class="bg-purple-500 bg-opacity-20 text-purple-700 hover:bg-opacity-30 py-2 px-4 rounded-lg transition">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Summer Math Program -->
+                <div class="course-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 card-hover-effect hover:border-primary hover:-translate-y-2">
+                    <div class="h-2 bg-blue-500"></div>
+                    <div class="p-8">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+                            <i class="fas fa-calculator text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Summer Math</h3>
+                        <p class="text-gray-600 mb-6">Get ahead of your math coursework and start the year with confidence.</p>
+                        <ul class="mb-8 space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Algebra I & II</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Geometry and Trigonometry</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Pre-Calculus preparation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Problem-solving techniques</span>
+                            </li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-900">$50<span class="text-lg">/hr</span></span>
+                            <a href="#schedule" class="bg-blue-500 bg-opacity-20 text-blue-700 hover:bg-opacity-30 py-2 px-4 rounded-lg transition">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Student Success Stories</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Don't just take our word for it - hear what students and parents have said about their experience</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md p-10">
+                    <div class="text-center mb-8">
+                        <div class="text-6xl text-blue-200">"</div>
+                    </div>
+                    
+                    <div class="max-w-2xl mx-auto">
+                        <div class="testimonial-slide active">
+                            <p class="text-gray-700 text-lg italic mb-8 text-center">
+                                "Working with DP transformed my SAT Math score! I was stuck at 620, but after just 8 sessions, I scored 740. The strategic approach to problem-solving made all the difference."
+                            </p>
+                            <div class="flex flex-col items-center">
+                                <span class="text-gray-800 font-semibold">Christopher Scardina</span>
+                                <span class="text-gray-600">SAT: 1090 → 1290 in 7 sessions</span>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-slide hidden">
+                            <p class="text-gray-700 text-lg italic mb-8 text-center">
+                                "I struggled with Math at the beginning of my 4th grade year, but after plenty of sessions with DP, I started to feel more confident with each new test!"
+                            </p>
+                            <div class="flex flex-col items-center">
+                                <span class="text-gray-800 font-semibold">Olivia M.</span>
+                                <span class="text-gray-600">Math grade: D+ → B+ in one semester</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center space-x-3 mt-10">
+                        <span class="w-3 h-3 rounded-full bg-primary cursor-pointer" data-index="0"></span>
+                        <span class="w-3 h-3 rounded-full bg-gray-300 cursor-pointer" data-index="1"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dots = document.querySelectorAll('[data-index]');
+            const slides = document.querySelectorAll('.testimonial-slide');
+            
+            let currentSlide = 0;
+            
+            // Rotate testimonials automatically every 5 seconds
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('bg-primary', index === currentSlide);
+                    dot.classList.toggle('bg-gray-300', index !== currentSlide);
+                });
+            }, 5000);
+            
+            // Add click event for dots
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const index = parseInt(dot.getAttribute('data-index'));
+                    
+                    // Remove active from current slide
+                    slides[currentSlide].classList.remove('active');
+                    
+                    // Update current slide
+                    currentSlide = index;
+                    
+                    // Add active to new slide
+                    slides[currentSlide].classList.add('active');
+                    
+                    // Update dots
+                    dots.forEach((d, i) => {
+                        d.classList.toggle('bg-primary', i === currentSlide);
+                        d.classList.toggle('bg-gray-300', i !== currentSlide);
+                    });
+                });
+            });
+        });
+    </script>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-slate-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
+                    <p class="max-w-2xl mx-auto text-slate-300">Have questions about test prep, course selection, or scheduling? Reach out anytime!</p>
+                </div>
+                
+                <div class="bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
+                    <div class="grid md:grid-cols-3 divide-x-0 md:divide-x divide-slate-700">
+                        <div class="p-8 text-center md:text-left">
+                            <div class="w-14 h-14 rounded-full bg-blue-900 flex items-center justify-center mb-6 mx-auto md:mx-0">
+                                <i class="fas fa-envelope text-blue-500 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Email Me</h3>
+                            <p class="text-slate-300 mb-4">For scheduling questions and general inquiries</p>
+                            <a href="mailto:danieleprieto1322@gmail.com" class="text-blue-400 hover:text-blue-300 transition">danieleprieto1322@gmail.com</a>
+                        </div>
+                        
+                        <div class="p-8 text-center md:text-left">
+                            <div class="w-14 h-14 rounded-full bg-blue-900 flex items-center justify-center mb-6 mx-auto md:mx-0">
+                                <i class="fas fa-phone text-blue-500 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Call Me</h3>
+                            <p class="text-slate-300 mb-4">Prefer to talk? I'm available weekdays</p>
+                            <a href="tel:+17865104933" class="text-blue-400 hover:text-blue-300 transition">(786) 510-4933</a>
+                        </div>
+                        
+                        <div class="p-8 text-center md:text-left">
+                            <div class="w-14 h-14 rounded-full bg-blue-900 flex items-center justify-center mb-6 mx-auto md:mx-0">
+                                <i class="fas fa-map-marker-alt text-blue-500 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">In-Person</h3>
+                            <p class="text-slate-300 mb-4">Available in the Greater Miami area</p>
+                            <p class="text-slate-300">Online via Zoom anywhere</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-700 p-8 text-center">
+                        <h3 class="text-xl font-bold mb-4">Have questions about payment?</h3>
+                        <p class="mb-6 max-w-2xl mx-auto text-slate-300">
+                            All payments are handled securely via Venmo or Zelle. An invoice is sent following each session.
+                        </p>
+                        <div class="inline-flex items-center bg-blue-900 bg-opacity-50 text-blue-300 py-2 px-4 rounded-lg">
+                            <i class="fas fa-lock mr-2"></i>
+                            <span>Secure payment options available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-950 text-slate-400">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-emerald-500 w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <span class="font-bold text-white">DP's Prep & Practice</span>
+                    </div>
+                    <p class="mt-2">SAT/ACT & Math Tutoring Excellence</p>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-slate-400 hover:text-slate-300 transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-slate-300 transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-slate-300 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-8 pt-8 text-center text-sm">
+                <p>© 2023 DP's Prep and Practice Tutoring. All rights reserved.</p>
+                <p class="mt-2">SAT® is a registered trademark of the College Board. ACT® is a registered trademark of ACT, Inc.</p>
+            </div>
+        </div>
+    </footer>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=DannyP1322/tutoring-website" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
